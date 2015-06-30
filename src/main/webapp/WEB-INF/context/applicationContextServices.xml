@@ -1,0 +1,137 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans     
+        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+	<bean id="hospitalMasterService"
+		class="com.vremind.vaccination.services.HospitalMasterService">
+		<property name="hospitalMasterDAO" ref="hospitalMasterDAO" />
+	</bean>
+	
+	<bean id="partnerService"
+		class="com.vremind.vaccination.services.partner.PartnerService">
+		<property name="hospitalMasterService" ref="hospitalMasterService" />
+		<property name="partnerDAO" ref="partnerDAO" />
+	</bean>
+
+	<bean id="vaccinationReminderBabyService"
+		class="com.vremind.vaccination.services.register.VaccinationReminderBabyServiceImpl">
+		<property name="registerBabyDAO" ref="registerBabyDAO" />
+		<property name="createBabyScheduleService" ref="createBabyScheduleService" />
+		<property name="alertService" ref="alertService" />
+	</bean>
+
+	<bean id="createBabyScheduleService"
+		class="com.vremind.vaccination.services.register.CreateBabyScheduleServiceImpl">
+		<property name="registerBabyDAO" ref="registerBabyDAO" />
+		<property name="vaccinationMasterDetailsService" ref="vaccinationMasterDetailsService" />
+	</bean>
+
+	<bean id="vaccinationMasterDetailsService"
+		class="com.vremind.vaccination.services.VaccinationMasterDetailsServiceImpl">
+		<property name="vaccinationMasterDetailsDAO" ref="vaccinationMasterDetailsDAO" />
+	</bean>
+
+	<bean id="alertService" class="com.vremind.vaccination.services.alert.AlertServiceImpl">
+		<property name="alertDAO" ref="alertDAO" />
+		<property name="SMSConnector" ref="smsConnector" />
+	</bean>
+
+
+	<!-- This will start every day at 12:00 AM begin -->
+	<bean id="prepareVaccinationSMSRemindersForAllJob"
+		class="com.vremind.vaccination.schedulers.PrepareVaccinationSMSRemindersForAllJob">
+		<property name="alertDAO" ref="alertDAO" />
+	</bean>
+
+	<bean name="jobPrepareVaccinationSMSRemindersForAll" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass"
+			value="com.vremind.vaccination.schedulers.PrepareVaccinationSMSRemindersForAllJob" />
+	</bean>
+
+	<bean id="cronTriggerPrepareVaccinationSMSRemindersForAll" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="jobPrepareVaccinationSMSRemindersForAll" />
+		<!-- second minute hour dayofmonth month dayofweek year -->
+		<property name="cronExpression" value="0 0 1 * * ?" /> 
+		<!--  <property name="cronExpression" value="0 0/5 21-23 * * ?" /> -->
+	</bean>
+	<!-- This will start every day at 12:00 AM end -->
+
+	<!-- This will start every day at 01:00 AM begin -->
+	<bean id="sendVaccinationSMSRemindersForAllJob"
+		class="com.vremind.vaccination.schedulers.SendVaccinationSMSRemindersForAllJob">
+		<property name="alertDAO" ref="alertDAO" />
+		<property name="alertService" ref="alertService" />
+	</bean>
+
+	<bean name="jobSendVaccinationSMSRemindersForAll" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass"
+			value="com.vremind.vaccination.schedulers.SendVaccinationSMSRemindersForAllJob" />
+	</bean>
+
+	<bean id="cronTriggerSendVaccinationSMSRemindersForAll" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="jobSendVaccinationSMSRemindersForAll" />
+		<property name="cronExpression" value="0 0 2 * * ?" />
+		<!-- <property name="cronExpression" value="0 0/3 21-23 * * ?" /> 
+		<property name="cronExpression" value="0 0/2 21-23 * * ?" /> -->
+		<!--<property name="cronExpression" value="0 60 8-19, * * ?" /> -->
+	</bean>
+	<!-- This will start every day at 08:00 AM end -->
+
+	<!-- This will start every hour from 9 to 18 hrs begin -->
+	<bean id="ackStatusSMSRemindersForAllJob"
+		class="com.vremind.vaccination.schedulers.GetAckStatusForSMSRemindersForAllJob">
+		<property name="alertDAO" ref="alertDAO" />
+		<property name="alertService" ref="alertService" />
+	</bean>
+
+	<bean name="jobAckStatusSMSRemindersForAllJob" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass"
+			value="com.vremind.vaccination.schedulers.GetAckStatusForSMSRemindersForAllJob" />
+	</bean>
+
+	<bean id="cronTriggerJobAckStatusSMSRemindersForAllJob" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="jobAckStatusSMSRemindersForAllJob" />
+		<property name="cronExpression" value="0 59 9-20, * * ?" /> 
+		<!-- <property name="cronExpression" value="0 0/5 21-23 * * ?" /> -->
+	</bean>
+	<!-- This will start every hour from 9 to 18 hrs -->
+	
+	<!-- This will start every day at 22 hour-->
+	<bean id="moveAlertsToHistoryJob"
+		class="com.vremind.vaccination.schedulers.MoveAlertsToHistoryJob">
+		<property name="alertDAO" ref="alertDAO" />
+	</bean>
+
+	<bean name="jobMoveAlertsToHistoryJob" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass"
+			value="com.vremind.vaccination.schedulers.MoveAlertsToHistoryJob" />
+	</bean>
+
+	<bean id="cronTriggerJobMoveAlertsToHistoryJob" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="jobMoveAlertsToHistoryJob" />
+		<property name="cronExpression" value="0 0 22 * * ?" />
+	</bean>
+	<!-- This will start every day at 22 hour-->
+
+	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="triggers">
+			<list>
+				<ref bean="cronTriggerPrepareVaccinationSMSRemindersForAll" />
+				<ref bean="cronTriggerSendVaccinationSMSRemindersForAll" />
+				<ref bean="cronTriggerJobAckStatusSMSRemindersForAllJob" />
+				<ref bean="cronTriggerJobMoveAlertsToHistoryJob" />
+			</list>
+		</property>
+	</bean>
+
+	<bean id="propertyPlaceholderConfigurer"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="systemPropertiesModeName" value="SYSTEM_PROPERTIES_MODE_OVERRIDE" />
+		<property name="searchSystemEnvironment" value="true" />
+	</bean>
+</beans>

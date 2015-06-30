@@ -1,0 +1,57 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans     
+        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+	<!-- HTTP Connection Beans Starting -->
+	<bean id="requestConfigBuilder" class="org.apache.http.client.config.RequestConfig"
+		factory-method="custom">
+		<property name="socketTimeout" value="${vremind.http.socketTimeoutInMillis}" />
+		<property name="connectTimeout" value="${vremind.http.connectionTimeoutInMillis}" />
+	</bean>
+
+	<bean id="requestConfig" factory-bean="requestConfigBuilder"
+		factory-method="build" />
+
+	<bean id="httpClientBuilder" class="org.apache.http.impl.client.HttpClientBuilder"
+		factory-method="create">
+		<property name="defaultRequestConfig" ref="requestConfig" />
+		<property name="connectionManager" ref="poolingConnectionManager" />
+	</bean>
+
+	<bean id="poolingConnectionManager"
+		class="org.apache.http.impl.conn.PoolingHttpClientConnectionManager">
+		<!-- <property name="maxTotal" ref="${vremind.http.maxConnectionPool}" /> 
+		<property name="defaultMaxPerRoute" ref="${vremind.http.maxPerRoute}" />-->
+	</bean>
+
+	<bean id="httpClient" factory-bean="httpClientBuilder"
+		factory-method="build" />
+
+	<!-- HTTP Connection Beans End -->
+	<bean id="smsProviderDetails"
+		class="com.vremind.vaccination.domain.SMSProviderDetails">
+		<constructor-arg value="${vremind.sms.vVaayoo.url.schema}" />
+		<constructor-arg value="${vremind.sms.vVaayoo.url.host}" />
+		<constructor-arg value="${vremind.sms.vVaayoo.send.url.path}" />
+		<constructor-arg value="${vremind.sms.vVaayoo.ack.url.path}" />
+		<constructor-arg value="${vremind.sms.vVaayoo.username}" />
+		<constructor-arg value="${vremind.sms.vVaayoo.senderid}" />
+	</bean>
+
+	<bean id="smsConnector"
+		class="com.vremind.vaccination.services.connector.SMSConnectorImpl">
+		<property name="smsProviderDetails" ref="smsProviderDetails" />
+		<property name="httpClient" ref="httpClient" />
+	</bean>
+
+	<bean id="propertyPlaceholderConfigurer"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="systemPropertiesModeName" value="SYSTEM_PROPERTIES_MODE_OVERRIDE" />
+		<property name="searchSystemEnvironment" value="true" />
+	</bean>
+</beans>        

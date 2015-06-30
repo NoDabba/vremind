@@ -1,0 +1,64 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:cache="http://www.springframework.org/schema/cache"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans     
+        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context-3.0.xsd
+        http://www.springframework.org/schema/cache
+        http://www.springframework.org/schema/cache/spring-cache.xsd">
+
+	<cache:annotation-driven />
+
+	<bean id="cacheManager" class="org.springframework.cache.support.SimpleCacheManager">
+		<property name="caches">
+			<set>
+				<bean
+					class="org.springframework.cache.concurrent.ConcurrentMapCacheFactoryBean"
+					p:name="vaccination_master" />
+				<bean
+					class="org.springframework.cache.concurrent.ConcurrentMapCacheFactoryBean"
+					p:name="hospital_master" />
+			</set>
+		</property>
+	</bean>
+	
+	<bean id="hospitalMasterDAO"
+		class="com.vremind.vaccination.dao.hospital.HospitalMasterDAOImpl">
+		<property name="jdbcTemplate" ref="jdbcTemplate" />
+	</bean>
+	
+	<bean id="partnerDAO"
+		class="com.vremind.vaccination.dao.partner.PartnerDAOImpl">
+		<property name="jdbcTemplate" ref="jdbcTemplate" />
+	</bean>
+
+	<bean id="registerBabyDAO"
+		class="com.vremind.vaccination.dao.register.RegisterBabyDAOImpl">
+		<property name="jdbcTemplate" ref="jdbcTemplate" />
+	</bean>
+
+	<bean id="vaccinationMasterDetailsDAO"
+		class="com.vremind.vaccination.dao.vacmasterdetails.VaccinationMasterDetailsDAOImpl">
+		<property name="jdbcTemplate" ref="jdbcTemplate" />
+	</bean>
+	
+	<bean id="alertDAO"
+		class="com.vremind.vaccination.dao.reminder.AlertDAOImpl">
+		<property name="jdbcTemplate" ref="jdbcTemplate" />
+		<property name="vacSecheduleSQL" ref="vacSecheduleSQL" />
+	</bean>
+	
+	<bean id="vacSecheduleSQL" class="java.lang.String">
+		 <constructor-arg value="${vremind.vaccination.schedule.sql}"/>
+	</bean>
+	
+	<bean id="propertyPlaceholderConfigurer"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="systemPropertiesModeName" value="SYSTEM_PROPERTIES_MODE_OVERRIDE" />
+		<property name="searchSystemEnvironment" value="true" />
+	</bean>
+</beans>

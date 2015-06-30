@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<link rel="shortcut icon" href="images/ico/favicon.png">
+		<link rel="shortcut icon" type="image/x-icon" href="images/ico/favicon.ico">
+
+		<title>vRemind - We care, we remind</title>
+		   <script src="js/jquery.js"></script> 
+		<!-- Bootstrap core CSS -->
+		<link href="assets/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+		<!-- Custom styles for this template -->
+		<link href="css/style.css" rel="stylesheet">
+        
+		
+		<!-- color schema -->
+		<link href="css/color-4.css" rel="stylesheet" id="layoutstyle">		
+		
+		<!-- google font for title -->
+		<link href="css/google-font.css" rel="stylesheet" id="googlefont">		
+		
+		<!-- fontawesome -->
+		<link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
+		<link href="lib/superslides/dist/stylesheets/superslides.css" rel="stylesheet">			
+	
+		<link href="lib/jquery.bxslider/jquery.bxslider.css" rel="stylesheet" />
+		
+		<link href="lib/3DGridEffect/css/component.css" rel="stylesheet" />
+		<script src="lib/3DGridEffect/js/modernizr.custom.js"></script>		
+		
+		<link href="lib/magnific-popup/dist/magnific-popup.css" rel="stylesheet" > 
+        <link href="css/bootstrap-responsive.css" rel="stylesheet">
+  <link href="css/bootstrap-modal.css" rel="stylesheet">
+
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+		  <script src="js/html5shiv.js"></script>
+		  <script src="js/respond.min.js"></script>
+		<![endif]-->
+		
+		<link rel="stylesheet" href="css/themes_panel.css">	
+        <link href="css/component.css" rel="stylesheet">	
+	<link href="css/default.css" rel="stylesheet">
+    <script src="js/bootstrap-modalmanager.js"></script>
+  <script src="js/bootstrap-modal.js"></script>
+  <script type="text/javascript">
+$(document).ready(function(){
+	$('.open-modal').click(function(){
+		$('#myModal').modal('show');
+	}); 
+});
+</script>
+
+<style type="text/css">
+.bs-example{
+	margin: 20px;
+}
+.open-modal{
+	width: 300px;
+	position: absolute;
+	margin: 0 auto;
+	top: 50px;
+	right: 0;
+	left: 150px;
+}
+</style>	
+
+	
+	</head>
+
+	<body>	
+    
+	
+    <div class="mask">			
+      <div id="intro-loader">
+      </div>		
+    </div>	
+	
+	<div id="slides">
+		<div class="slides-container">
+		  <img src="images/slider/slider3.jpg" alt="slider1">
+		  <img src="images/slider/slider2.jpg" alt="slider2">
+		  <img src="images/slider/slider1.jpg" alt="slider3">
+		</div>
+	</div>	
+	
+	<!-- intro -->
+	<div id="top" class="top">
+		<div class="intro">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-3 text-center animate_left">
+						<div class="logo"><img src="images/logo.png" alt="logo"></div>
+						<span class="subtitle">we care, we remind</span>
+					</div>					
+					<div class="col-md-9 slider_title cbp-qtrotator" id="cbp-qtrotator">
+						<div class="cbp-qtcontent">
+						<h2>More than <span id="pageLoad">0</span> Lakh kids losing their lives for missing vaccinations in India<a href="http://www.who.int/mediacentre/factsheets/fs378/en/" target="_blank">*</a></h2>
+						</div>
+						<div class="cbp-qtcontent">
+						<h2> Did you miss your kid's vaccination? Register today and get free vaccination reminders.</h2>
+						</div>
+						<div class="cbp-qtcontent">
+						<h2> 24 to 26 million future deaths can be averted across the globe<a href="http://www.who.int/immunization/global_vaccine_action_plan/en/" target="_blank">**</a>.</h2>
+						</div>		
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+    <!-- Fixed navbar -->
+	<div id="nav-wrapper">
+		<div id="nav" class="navbar">
+		  <div class="container">
+			<div class="navbar-header">
+			  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			  </button>
+			  <a class="navbar-brand" href="#"><img src="images/logo.png" alt="logo"></a>
+			</div>
+			<div class="navbar-collapse collapse">
+			  <ul class="nav navbar-nav navbar-right">
+				<li><a href="#top">Home</a></li>
+				<li><a href="#education">What we do</a></li>
+                <li><a href="#regis">Register</a></li>
+                <li><a href="#stories">Vaccination</a></li>
+				<!--<li><a href="#stories">Our Success</a></li>	-->
+				<li><a href="#help">Volunteer</a></li>	
+				<!--<li><a href="#gallery">Gallery</a></li>	-->
+				<li><a href="#contact">Contact us</a></li>	
+			  </ul>
+			</div><!--/.nav-collapse -->
+		  </div>
+		</div>  	
+	</div>
+
+	<!-- Helping children to educate -->
+    <div class="education" id="education">
+    
+		<div class="container text-center">
+            <div class="row">
+            <!--    <div class="col-md-12 heading dark animate_top">Vaccination reminders for <span>Kids</span></div> -->
+                <div class="col-md-12 heading dark animate_top">WHAT WE DO</div>
+            </div>
+        	<div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-13 welcome_txt text-center animate_fade_in">
+            <p> Every year there are about 20 lakh kids loosing their lives for missing vaccinations in India<a href="http://www.who.int/mediacentre/factsheets/fs378/en/" target="_blank">*</a>. Various studies show that large number of kids miss their vaccination because of parents forgetting the vaccination scheduled dates. vRemind.org is a social enterprise committed for noble cause to improve immunization for kids. We help parents with timely reminders about vaccination schedule thus help in protecting their kids from various life threatening diseases. </p>
+            
+            
+         <p align="left"> Our Focus is to </br> <img src="images/bullet-icon.png"> Use simple yet effective approaches to reach everyone targeted for immunization</br>
+           <img src="images/bullet-icon.png">  Ensure maximum reach across the country by increasing awareness for immunization</br>
+          <img src="images/bullet-icon.png">   Provide free vaccination reminders upto 5 years of age</br>
+           <img src="images/bullet-icon.png">  Remind about National Polio Vaccination by Govt. of India</br></p>
+             </p></div></div></div>
+        		</div>
+    <!-- About us -->
+    <div class="regis" id="regis">
+	<div class="about_us">
+		<div class="container">
+			<div class="row text-center">
+				<div class="col-md-1"></div>
+				<div class="col-md-12 animate_left">
+                <img class="pull-left" src="images/register.png" alt="register" height="400" width="200">
+					<h1><b>How to register? </b></h1></br></br>
+                    
+                    <div class="bs-example">
+    <!-- Button HTML (to Trigger Modal) -->
+    <input type="button" class="btn btn-lg btn-primary open-modal" value="Click here to register Online">
+    
+    <!-- Modal HTML -->
+    <div id="myModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Registration</h4>
+                </div>
+               <div class="container-fluid">
+    <section class="container">
+		<div class="container-page">				
+			<div class="col-md-6">
+				
+				
+						<p align="center" id="message3" style="color:#ff3300;"></p>
+				<div class="form-group col-lg-6">
+					<label>Date of Birth</label>
+					<input type="date" name="rdate" class="form-control" id="cnct2-date" value="">
+				</div>
+				
+				<div class="form-group col-lg-6">
+					<label>Baby Name</label>
+					<input type="text" name="rname" class="form-control" id="cnct2-name" value="">
+				</div>
+								
+				<div class="form-group col-lg-6">
+					<label>Email</label>
+					<input type="mail" name="remail" class="form-control" id="cnct2-mail" value="">
+				</div>
+				
+				<div class="form-group col-lg-6">
+					<label>Mobile Number</label>
+					<input type="number" name="rmob" class="form-control" id="cnct2-mob" value="">
+				</div>			
+				<button type="submit" id="cnct2" class="btn btn-primary">Register</button>
+							
+			
+			</div>
+		
+			
+		</div>
+	</section>
+</div>
+            </div>
+        </div>
+    </div>
+</div>
+                    
+                    
+                    
+                    
+					
+                    	Get FREE vaccination reminders for kids below  5 years.</br>
+                     	Send SMS <b> <font color="#3399CC">REMIND</b> [space] <b>Date of birth DD-MM-YY</b> [space] <b>Baby name/nick name </b></font> to <b><font color="#3399CC">56263</b></font><br/></h3>
+                    	<h3><br/> 
+                    	We remind parents by sending free SMS for every vaccination due for their kids. We send two reminders for each vaccination, 7 days before the schedule due date and 1 day before schedule due date.</font>
+                    </h3>
+				</div>
+              <div class="col-md-1"></div>
+			</div><!-- End call action text -->
+		</div>
+	</div>
+	<!-- Stories -->
+	<div class="stories" id="stories">
+		<div class="container text-center">
+			<div class="row">
+            	<div class="col-md-12 heading dark animate_top">Vaccination reminders for <span>Kids</span></div>
+            </div>
+        	<div class="row">
+        		<div class="col-md-4 b1">
+                	<i class="fa fa-bar-chart-o"></i>
+                    <h3 class="animate_top">Statistics</h3>
+                    <figure>
+                    <a href="images/gallery/11.gif" target="_blank"><img src="images/gallery/11.gif" alt="Smiley face" height="175" width="200"></a> </figure>  
+            	</div>
+        		<div class="col-md-4 b2">
+                	<i class="fa fa-calendar"></i>
+                    <h3 class="animate_top">Schedule</h3>
+                    <p class="animate_bottom">We follow the comprehensive schedule provided by IAP. We use this for sending vaccination reminders.</p></br>
+                    -<a HREF="iap.pdf" target="_blank">IAP Schedule </br></a>
+                    -<a HREF="ima.pdf" target="_blank">IMA Schedule </br></a>
+                    -<a href="http://www.who.int/immunization/policy/immunization_tables/en/" target="_blank">WHO schedule</a></br>
+                    -<a href="http://en.wikipedia.org/wiki/Vaccination_schedule" target="_blank">Wiki links </a> </p>
+				</div>		
+				<div class="col-md-4 b21">
+                	<i class="fa fa-ellipsis-vertical"></i>
+                   <h3>Vaccines and diseases </h3>
+						<p class="animate_bottom"><a href="http://www.who.int/immunization/diseases/en/" target="_blank">Information by World Health Organization </a></p> 
+            	</div>
+        		<div class="col-md-4 b22">
+                	<i class="fa fa-question-circle"></i>
+                    <h3 class="animate_top">FAQs</h3>
+                    <p><b>Who are we?  </b> <br/>
+                        We are neither doctor nor represent any vaccination organizations. For accurate details and recommended vaccines for your kid please contact your doctor. We are parents like you, who once missed vaccination for loving kid.</p>
+                        <p class="readmore"> <a href="faq.html" target="_blank"><font color="#000000">...read more</a></p>
+				</div>
+				</div>		
+			</div>
+		</div>	  
+	</div>	
+	
+	
+    <!-- How can you help -->
+    <div class="how_can_you_help_bg parallax" id="help">
+		<div class="how_can_you_help">
+			<div class="container">	
+				<div class="row">
+					<div class="col-md-12 text-center heading animate_top">How can you<span class="brd"> help?</span>
+                    </div>
+                    <p style="margin-top:-30px;">vRemind welcomes skilled and dedicated volunteers to contribute to our work. Currently we accept volunteers, both students and professionals, who are interested in working full time for a minimum of three months. If you would like to volunteer and have training and experience in public health, child care, please send your cover letter and resume to <a href="#" style="color:#fff;text-decoration:none;"><strong>vRemind.India@gmail.com</strong></a> with “Volunteer” in the subject of the e-mail. </p>
+				</div>
+				<ul class="nav nav-tabs responsive second text-center" id="myTab">
+				  <li class="active"><a href="#tab1">Support Us</a></li>
+				 <!-- <li><a href="#tab2">Donate</a></li>  -->
+				  <li><a href="#tab3">Take responsibility for one kid</a></li>				  
+				</ul>
+
+				<div class="tab-content responsive">
+					<div class="tab-pane active in fade" id="tab1">
+                    
+                    <div class="subscribe">			
+			<div class="container">
+			<div class="row">
+				<div class="col-md-12 text-center heading newsletter animate_top">
+					<span>Volunteer</span> 
+				</div>
+			</div>
+				
+			<form id="signup" action="php/subscribe_me.php" method="post" class="animate_bottom">
+				<div class="row">
+					<div class="col-md-2"></div>
+					<div class="col-md-8 text-center">											
+						<span id="response"></span>
+                      
+					</div>	
+					<div class="col-md-2"></div>
+				</div>
+				<div class="row">	
+					<div class="col-md-2"></div>
+					<div class="col-md-5 text-center nopadding">
+						<input type="text" name="fmail" id="mail-sub" placeholder="Your email address..." class="form-control" />
+					</div>
+					<div class="col-md-3 text-center nopadding">	
+						<input type="submit" name="submit" value="Subscribe" id="subscr" class="button " />
+					</div>
+					<div class="col-md-2"></div>
+				</div>
+				</div>
+					<div class="col-md-2"></div>
+				</div>
+                <p align="center" id="message" style="color:#fff;"></p>
+			</form>
+		</div>		
+    </div>
+	<!-- Contact with us -->
+	<div class="contact-bg parallax" id="contact">
+		<div class="contact">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 text-center heading animate_top"><span class="brd">Contact </span>with us</div>
+				</div>
+				
+				<div class="row">
+					<div class="col-md-1"></div>
+					<div class="col-md-5 contact_form animate_left">
+					<form name="contactForm" method="post" action="php/contact_me.php">
+							<!--<div id='mail_success' class='success'><img src='images/success.png' alt="img">Your message has been sent successfully.</div>
+								<div id='mail_fail' class='error'><img src='images/error.png' alt="img"> Sorry, error occured this time sending your message.</div>-->
+								
+								<!--<div id='name_error' class='error'><img src='images/error.png' alt="img">Please enter your name.</div>-->
+								<input type="text"  name='fname' id='cnct-name' class="form-control" placeholder="Your name">
+								
+								<!--<div id='email_error' class='error'><img src='images/error.png' alt="img">Please enter your valid E-mail ID.</div>-->
+								<input type="text" name='femail' id='cnct-email' class="form-control" placeholder="Email">
+							
+								<!--<div id='message_error' class='error'><img src='images/error.png' alt="img">Please enter your message.</div>-->
+								<textarea name='fmessage' id='cnct-msg' class="form-control" placeholder="Message"></textarea>
+															
+								<button class="bttn" id='cnct' type="submit" >Send</button>
+                                <p align="center" id="message2" style="color:#fff;"></p>
+						</form>  					
+					</div>
+					<div class="col-md-5 contact_info animate_right">
+						<p>Are you looking for something? Before contacting us, please visit our <a href="faq.html">FAQs.</a> </br>
+						   Question not answered by the links above? Just use the form below to submit a ticket to our support team. 
+						   We do our best to answer all inquiries as soon as possible – please allow up to two business days for a response, due to the volume of inquiries received.</p>
+						<h5>Email</h5>
+						<p>info@vremind.com</p>
+					</div>
+					<div class="col-md-1"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- Social-icons -->
+    <div class="social-icons">
+		<div class="container text-center">
+            <div class="row">
+                <div class="col-md-12 text-center heading animate_top"><span>Spread </span>the word</div>
+            </div>		
+		
+        	<div class="row">
+				<div class="col-md-12">
+					<ul class="animate_bottom">
+						<li><a href="https://twitter.com/vRemindIndia"><i class="fa fa-twitter"></i></a></li>
+						<li><a href="http://www.facebook.com/vremind"><i class="fa fa-facebook"></i></a></li>						
+						<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+					</ul>
+				</div>
+            </div>
+     	</div>
+    </div>		
+	
+	<!-- Footer -->
+    <div class="footer">
+		<div class="container">
+        	<div class="row text-center">
+            	<div class="col-md-12"><p>Copyright &copy; 2014, All rights reserved by vRemind.org</p></div>
+            </div>
+     	</div>
+    </div>
+ <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+     <script type="text/javascript" src="assets/js/jquery-1.10.2.min.js"></script>
+    
+	<script>
+
+$("#subscr").click(function(e) {
+
+    var e=$("#mail-sub").val();
+	if(!e.match(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)){
+		$("#message").html("Your e-mail address is incorrect. Please check it and try again.");
+		return false;
+		}
+		else{
+			$.ajax({
+				url:"php/subscribe_me.php",
+				async:true,
+				type:"POST",
+				data:"email="+e,
+				success: function(eg){
+					
+					if(eg.trim()=="1"){
+					$("#message").html("Successfully Subscribed!! We will inform you as soon as we finish.");}
+					else{
+						$("#message").html("Oops. Looks like something went wrong. Please try again later.");
+						}
+						$("#mail-sub").val("");
+					},
+					error:function(err){
+						$("#message").html("Oops. Looks like something went wrong. Please try again later.");
+						$("#mail-sub").val("");
+						}
+						
+				});
+				return false;
+			}
+			return false;
+});
+
+</script>
+<script>
+$("#cnct").click(function(e) {
+	var n=$("#cnct-name").val();
+    var e=$("#cnct-email").val();
+	var m=$("#cnct-msg").val();
+	if(!n.match(/^[A-Za-z]+$/)){
+		$("#message2").html("Enter valid name");
+		return false;
+	
+		}
+	
+	
+	if(!e.match(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)){
+		$("#message2").html("Your e-mail address is incorrect. Please check it and try again.");
+		
+		return false;
+		}
+		
+		if(!m.match(/^[A-Za-z0-9]+$/)){
+		$("#message2").html("Enter valid message");
+		
+		return false;
+		}
+	
+	
+		else{
+			$.ajax({
+				url:"php/contact_me.php",
+				async:true,
+				type:"POST",
+				data:"email="+e+"&name="+n+"&subject="+s+"&message="+m,
+				success: function(eg){
+					
+					if(eg.trim()=="1"){
+					$("#message2").html("Successfully Submitted!! We will inform you as soon as we finish.");}
+					else{
+						$("#message2").html("Oops. Looks like something went wrong. Please try again later.");
+						
+						}
+						$("#cnct-name").val("");
+						$("#cnct-email").val("");
+			
+						$("#cnct-msg").val("");
+					},
+					error:function(err){
+						$("#message2").html("Oops. Looks like something went wrong. Please try again later.");
+						
+						$("#cnct-name").val("");
+						$("#cnct-email").val("");
+				
+						$("#cnct-msg").val("");
+						}
+				});
+				return false;
+			}
+			return false;
+});
+
+</script>
+<script>
+$("#cnct2").click(function(e) {
+	var d=$("#cnct2-date").val();
+	var n=$("#cnct2-name").val();
+    var e=$("#cnct2-mail").val();
+	var m=$("#cnct2-mob").val();
+
+var regEx = /^\d{4}-\d{2}-\d{2}$/;
+	if(!d.match(regEx)){
+		$("#message3").html("Enter valid date of birth")
+		return false;
+		}
+		
+	if(!n.match(/^[A-Za-z]+$/)){
+		$("#message3").html("Enter valid Baby name");
+		return false;
+	
+		}
+	
+	
+	if(!e.match(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)){
+		$("#message3").html("Your e-mail address is incorrect. Please check it and try again.");
+		
+		return false;
+		}
+		
+		if(!m.match(/^[0-9]+$/)){
+		$("#message3").html("Enter valid mobile number");
+		
+		return false;
+		}
+	
+	
+		else{
+
+			$.ajax({
+				url:"http://www.vremind.org/vremind/onlineregister.do",
+				async:true,
+				type:"POST",
+		        dataType: 'json',
+				data:"email="+e+"&babyName="+n+"&mobile="+m+"&dob="+d,
+				success: function(json){
+
+					 var arr = JSON.parse(JSON.stringify(json));
+					
+					if (arr != null) {
+						
+						if (arr.success != null)
+						{
+							$("#message3").html(arr.success);
+							$("#cnct2-date").val("");
+							$("#cnct2-name").val("");
+							$("#cnct2-mail").val("");
+							$("#cnct2-mob").val("");
+						}
+						else
+						{
+							var failureMessage = arr.failureList;
+							if (failureMessage != null)
+							{
+								var message = "";
+								for(i = 0; i < failureMessage.length; i++) {
+									message += failureMessage[i] + "<br>";
+								}
+								$("#message3").html(message);
+							}
+						}
+					 }
+					 else {
+						$("#message3").html("Oops. Looks like something went wrong. Please try again later.");
+					 }
+					},
+					error:function(err){
+						$("#message3").html("Oops. Looks like something went wrong. Please try again later.");
+						
+						$("#cnct2-date").val("");
+						$("#cnct2-name").val("");
+						$("#cnct2-mail").val("");
+			
+						$("#cnct2-mob").val("");
+						}
+				});
+				return false;
+		}
+			return false;
+});
+
+</script>
+    
+    
+    
+    
+    
+ 
+	
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+	
+	<!--<script src="js/inviewport.jquery.js"></script>-->
+	
+	<script src="js/jquery.animateNumbers.js"></script>	
+	
+	<script src="js/responsive-tabs.js"></script>
+	
+	<script src="lib/jQuery-One-Page-Nav/jquery.scrollTo.js"></script>
+	<script src="lib/jQuery-One-Page-Nav/jquery.nav.js"></script>	
+	
+	<!-- jquery-parallax -->
+	<script src="lib/jquery-parallax/scripts/jquery.parallax-1.1.3.js"></script>	
+	
+	<!-- mailchimp -->
+	<script src="lib/mcapi-simple-subscribe-jquery/js/mailing-list.js"></script>				
+	<!-- mailchimp -->	
+	<script src="lib/ajax-html-contact-form/js/validation.js"></script>
+	<script src="lib/superslides/dist/jquery.superslides.js"></script>
+	<script src="lib/jquery.appear/jquery.appear.js"></script>	
+	<script src="lib/jquery.bxslider/jquery.bxslider.min.js"></script>
+	<script src="lib/3DGridEffect/js/classie.js"></script>
+	<script src="lib/3DGridEffect/js/helper.js"></script>
+	<script src="lib/3DGridEffect/js/grid3d.js"></script>
+	<script src="lib/magnific-popup/dist/jquery.magnific-popup.js"></script>
+	<script src="js/custom.js"></script>
+	<script src="js/themes_panel.js"></script>
+	<script src="js/modernizr.custom.js"></script>
+	<script src="js/jquery.cbpQTRotator.js"></script>
+	<script>
+	$(document).ready(function(){
+		$( function() {
+			$( '#cbp-qtrotator' ).cbpQTRotator();
+		} );
+	});
+	</script>
+	</body>
+</html>

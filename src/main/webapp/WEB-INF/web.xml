@@ -1,0 +1,55 @@
+<web-app id="WebApp_ID" version="2.4"
+	xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee 
+	http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+
+	<display-name>vremind Web MVC Application</display-name>
+
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>
+	        /WEB-INF/context/applicationHttpConnectors.xml
+	        /WEB-INF/context/applicationContextJDBC.xml
+	        /WEB-INF/context/applicationContextDAOs.xml
+	        /WEB-INF/context/applicationContextServices.xml
+	    </param-value>
+
+	</context-param>
+	<context-param>
+		<param-name>appconfig</param-name>
+		<param-value>appconfig.properties</param-value>
+	</context-param>
+	<context-param>
+		<param-name>smsmessagetemplates</param-name>
+		<param-value>smsmessages.properties</param-value>
+	</context-param>
+
+	<servlet>
+		<servlet-name>vremind</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>vremind</servlet-name>
+		<url-pattern>*.do</url-pattern>
+	</servlet-mapping>
+
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value> /WEB-INF/context/applicationHttpConnectors.xml, /WEB-INF/context/applicationContextJDBC.xml, /WEB-INF/context/applicationContextDAOs.xml, /WEB-INF/context/applicationContextServices.xml, /WEB-INF/vremind-servlet.xml</param-value>
+	</context-param>
+
+	<listener>
+		<listener-class>com.vremind.vaccination.presentation.core.AppServletContextListener</listener-class>
+	</listener>
+
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+	</welcome-file-list>
+
+</web-app>
